@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: checkimage 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: checkimage
+  template:
+    metadata:
+      labels:
+        app: checkimage 
+    spec:
+      containers:
+        - name: checkimage 
+          image: tadarshtiwari1996.azurecr.io/checkimage
+          ports:
+          - containerPort: 8080
